@@ -1,0 +1,31 @@
+name: A workflow for deploying a CDK App to an AWS account
+on: push
+
+jobs:
+  build:
+    name: CDK deployment Action
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code 
+        uses: actions/checkout@v2
+        with:
+          ref: 
+      - name: Configure AWS credentials from Test account
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+           aws-access-key-id: ${{ secrets.ACCESS_KEY_ID }}
+           aws-secret-access-key: ${{ secrets.SECRET_KEY_ID }}
+           aws-region: eu-west-1
+      - name: PREP install typescript and CDK
+        run: |
+          sudo npm install -g typescript
+          sudo npm install -g aws-cdk
+          cdk --version
+      - name: DEPLOY synthesize & deploy cdk-sample app
+        run: |
+          cd ${GITHUB_WORKSPACE}/cdk-sample
+          npm install
+          cdk synth
+          cdk deploy --require-approval never
+
+
