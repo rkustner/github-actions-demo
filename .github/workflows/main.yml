@@ -20,10 +20,11 @@ jobs:
         run: |
           sudo npm install -g typescript
           sudo npm install -g aws-cdk
-      - name: Initialize CodeQL
-        uses: github/codeql-action/init@v1
-      - name: Perform CodeQL Analysis
-        uses: github/codeql-action/analyze@v1
+          set
+      #- name: Initialize CodeQL
+      #  uses: github/codeql-action/init@v1
+      #- name: Perform CodeQL Analysis
+      #  uses: github/codeql-action/analyze@v1
       - name: DEPLOY synthesize & deploy cdk-sample app
         run: |
           cd ${GITHUB_WORKSPACE}/cdk-sample
