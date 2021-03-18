@@ -5,5 +5,5 @@ def handler(event, context):
     return {
         "statusCode": 200,
         "headers": { "Content-type": "text/html"} ,
-        "body": html
+        "body": message
     }
