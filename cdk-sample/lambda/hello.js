@@ -11,6 +11,6 @@ exports.handler = async function(event) {
     return {
       statusCode: 200,
       headers: { "Content-Type": "text/plain" },
-      body: `Hello there, CDK! You've hit ${event.path}\n`
+      body: `Hello there, CDK team! You've hit ${event.path}\n`
     };
   };
