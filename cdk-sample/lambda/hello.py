@@ -1,6 +1,9 @@
 
 def handler(event, context):
-    message = 'Hello There!'  
-    return { 
-        'message' : message
+    message = '<h1>Hello There!</h1>'  
+
+    return {
+        "statusCode": 200,
+        "headers": { "Content-type": "text/html"} ,
+        "body": html
     }
