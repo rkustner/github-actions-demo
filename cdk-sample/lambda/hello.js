@@ -1,6 +1,8 @@
 exports.handler = async function(event) {
     console.log("request:", JSON.stringify(event, undefined, 2));
-    const codeqltest = codeqltest &&;
+    //const codeqltest = codeqltest &&;
+
+    const url = ''
 
     // let's see if codeql catches this
     try {
