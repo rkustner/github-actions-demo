@@ -1,6 +1,6 @@
 
 def handler(event, context):
-    message = '<h1>Hello There!</h1>'  
+    message = '<h1>Hello There from the CCoE!</h1>'  
 
     return {
         "statusCode": 200,
